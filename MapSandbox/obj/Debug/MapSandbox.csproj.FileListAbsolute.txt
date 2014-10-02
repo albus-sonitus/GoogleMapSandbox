@@ -1,0 +1,6 @@
+C:\MyProjects\GoogleMapSandbox\MapSandbox\bin\MapSandbox.dll.config
+C:\MyProjects\GoogleMapSandbox\MapSandbox\bin\MapSandbox.dll
+C:\MyProjects\GoogleMapSandbox\MapSandbox\bin\MapSandbox.pdb
+C:\MyProjects\GoogleMapSandbox\MapSandbox\obj\Debug\MapSandbox.csprojResolveAssemblyReference.cache
+C:\MyProjects\GoogleMapSandbox\MapSandbox\obj\Debug\MapSandbox.dll
+C:\MyProjects\GoogleMapSandbox\MapSandbox\obj\Debug\MapSandbox.pdb

@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+        html {
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #map-canvas {
+            height: 100%;
+        }
+    </style>
+    
+    <script type="text/javascript">
+
+        function initialize() {
+            var mapOptions = {
+                zoom: 11,
+                center: new google.maps.LatLng(41.5885059,-93.6395652),
+                // disableDefaultUI: true,
+                //panControl: boolean,
+                //zoomControl: boolean,
+                //mapTypeControl: boolean,
+                //scaleControl: boolean,
+                //streetViewControl: boolean,
+                //overviewMapControl: boolean
+                
+                //zoomControl: true,
+                //zoomControlOptions: {
+                //    style: google.maps.ZoomControlStyle.SMALL
+                //}
+
+                panControl: false,
+                mapTypeControl: false,
+                //mapTypeControlOptions: {
+                //    style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+                //},
+
+                streetViewControl: false
+                //streetViewControlOptions: {
+                //    position: google.maps.ControlPosition.LEFT_TOP
+                //}
+
+            //    styles: [
+            //        {
+            //            "featureType": "landscape.natural",
+            //            "stylers": [{
+            //                "color": "#b1b1b1"
+            //            }]
+            //        },
+            //        {
+            //            "featureType": "landscape.man_made",
+            //            "stylers": [
+            //            { "color": "#dbdadb" }]
+            //        }, {
+            //                "featureType": "road.highway",
+            //                    "elementType": "labels",
+            //                    "stylers": [
+            //                        { "visibility": "simplified" },
+            //                        { "weight": 2.2 }
+            //                    ]
+            //                },{
+            //        "featureType": "road.arterial",
+            //        "elementType": "geometry",
+            //        "stylers": [
+            //            { "color": "#2e2e2e" },
+            //            { "visibility": "simplified" },
+            //            { "weight": 0.8 }
+            //        ]
+            //                },{
+            //                    "featureType": "road.local",
+            //                    "elementType": "geometry",
+            //                    "stylers": [
+            //                        { "color": "#636464" },
+            //                        { "visibility": "on" },
+            //                        { "weight": 0.3 }
+            //                    ]
+            //                },{
+            //        "elementType": "labels",
+            //        "stylers": [
+            //            { "visibility": "on" }
+            //        ]
+            //                },{
+            //                    "featureType": "road.highway",
+            //                    "elementType": "geometry",
+            //                    "stylers": [
+            //                        { "color": "#141412" },
+            //                        { "weight": 0.9 }
+            //                    ]
+            //                },{
+            //        "featureType": "poi.park",
+            //        "elementType": "geometry",
+            //        "stylers": [
+            //            { "color": "#8bc98d" }
+            //        ]
+            //}
+            //]
+            };
+
+            var map = new google.maps.Map(document.getElementById('map-canvas'),
+                mapOptions);
+
+            var image = {
+                url: 'images/MyMapMarker.png',
+
+                // This marker is 20 pixels wide by 32 pixels tall.
+                size: new google.maps.Size(67, 79),
+
+                // The origin for this image is 0,0.  This is the upper/left corner of where your image is.
+                origin: new google.maps.Point(0, 0),
+                
+                // Setting the scale-size dynamically would be a good idea when you're zooming in/out, so
+                // your image changes size.  Otherwise, when you zoom out, your image will cover a large
+                // area of the map.
+                // scaledSize: new google.maps.Size(25, 25)
+
+                // Set which point in your image the latitude/longitude should snap to
+                // For a circular image, you'll probably want the center of your image.
+                anchor: new google.maps.Point(38, 40)
+            };
+            var myLatLng = new google.maps.LatLng(41.5885059, -93.6395652);
+            var beachMarker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                icon: image
+            });
+
+            //var transitLayer = new google.maps.TransitLayer();
+            //transitLayer.setMap(map);
+        }
+
+        function loadScript() {
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBLtRPX6xQ9rR8yD9XdfNkBL921acYSp4A&v=3.exp&' + 'callback=initialize';
+            document.body.appendChild(script);
+        }
+
+        window.onload = loadScript;
+    </script>
+</head>
+<body>
+
+    <div id="map-canvas" />
+
+</body>
+</html>
